@@ -1,0 +1,23 @@
+name: check
+
+on:
+  push:
+
+jobs:
+  check-image:
+    name: Check Docker image
+    runs-on: ubuntu-latest
+    container: ghcr.io/k1low/centve:latest
+    steps:
+      - name: Show installed Ruby versions
+        run: |
+          anyenv-init
+          rbenv versions
+
+      - name: Set Ruby version
+        run: |
+          rbenv global $(rbenv versions | tail -1)
+
+      - name: Show current Ruby version
+        run: |
+          ruby -v
