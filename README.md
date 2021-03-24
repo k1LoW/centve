@@ -26,7 +26,6 @@ jobs:
       - name: Use Ruby
         run: |
           ruby -v
-        shell: bash -l {0}
 ```
 
 ### Use as `FROM` in Dockerfile
