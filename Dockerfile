@@ -9,7 +9,7 @@ ARG PERL_VERSIONS="5.32"
 ARG PHP_VERSIONS="5 7 8"
 
 RUN yum install -y epel-release \
-    && yum install -y git curl gcc gcc-c++ make cmake3 patch autoconf \
+    && yum install -y git curl which iproute gcc gcc-c++ make cmake3 patch autoconf \
     bzip2 libxml2 libxml2-devel libcurl libcurl-devel libpng libpng-devel \
     libmcrypt libmcrypt-devel \
     libtidy libtidy-devel libxslt libxslt-devel openssl-devel \
