@@ -9,15 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/k1low/centve:latest
     steps:
-      - name: Show installed Ruby versions
+      - name: Show installed versions
         run: |
           anyenv-init
           rbenv versions
+          plenv versions
+          phpenv versions
 
       - name: Set Ruby version
-        run: |
-          rbenv global $(rbenv versions | tail -1)
+        run: rbenv global $(rbenv versions | tail -1)
 
       - name: Show current Ruby version
-        run: |
-          ruby -v
+        run: ruby -v
+
+      - name: Set Perl version
+        run: plenv global $(plenv versions | tail -1)
+
+      - name: Show current Perl version
+        run: perl -v
+
+      - name: Set PHP version
+        run: phpenv global $(phpenv versions | tail -1)
+
+      - name: Show current PHP version
+        run: php -v
