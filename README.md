@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/k1low/centve:latest
     steps:
-      - name: Initialize centve and setup Ruby
+      - name: Initialize anyenv and setup Ruby
         run: |
           anyenv-init
           rbenv global 2.7.2
