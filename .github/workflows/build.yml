@@ -40,7 +40,7 @@ jobs:
             PERL_VERSIONS=
             PHP_VERSIONS=
           pull: true
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' }}
           labels: |
             org.opencontainers.image.source=https://github.com/k1LoW/centve
           tags: |
@@ -52,7 +52,7 @@ jobs:
         with:
           context: .
           pull: true
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' }}
           labels: |
             org.opencontainers.image.source=https://github.com/k1LoW/centve
           tags: |
